@@ -1,0 +1,153 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block title %}MDiary{% endblock %}
+
+{% block navbar %}
+    {% include 'navigation.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="heading">Movies Diary</h1>
+        <h3 class="description">Movies in a Jar</h3>
+    </div>
+    <div class="container">
+        <h1 class="heading">Pick of the day</h1>
+    </div>
+    <div class="grid-container">
+        <div class="card" >
+            <img class="card-img-top" src="https://i.pinimg.com/736x/e1/7b/91/e17b915d2b6835a608dcd0acd6ea186c.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    </div>
+    {#    <div class="container-fluid mt-4">#}
+    {#        <div class="row justify-content-center">#}
+    {#            <div class="col-auto mb-3">#}
+    {#                <div class="card" style="width: 18rem;">#}
+    {#                    <div class="card-body">#}
+    {#                        <h5 class="card-title">Card title</h5>#}
+    {#                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+    {#                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of#}
+    {#                            the card's content.</p>#}
+    {#                        <a href="#" class="card-link">Card link</a>#}
+    {#                        <a href="#" class="card-link">Another link</a>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="col-auto mb-3">#}
+    {#                <div class="card" style="width: 18rem;">#}
+    {#                    <div class="card-body">#}
+    {#                        <h5 class="card-title">Card title</h5>#}
+    {#                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+    {#                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of#}
+    {#                            the card's content.</p>#}
+    {#                        <a href="#" class="card-link">Card link</a>#}
+    {#                        <a href="#" class="card-link">Another link</a>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="col-auto mb-3">#}
+    {#                <div class="card" style="width: 18rem;">#}
+    {#                    <div class="card-body">#}
+    {#                        <h5 class="card-title">Card title</h5>#}
+    {#                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+    {#                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of#}
+    {#                            the card's content.</p>#}
+    {#                        <a href="#" class="card-link">Card link</a>#}
+    {#                        <a href="#" class="card-link">Another link</a>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="col-auto mb-3">#}
+    {#                <div class="card" style="width: 18rem;">#}
+    {#                    <div class="card-body">#}
+    {#                        <h5 class="card-title">Card title</h5>#}
+    {#                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+    {#                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of#}
+    {#                            the card's content.</p>#}
+    {#                        <a href="#" class="card-link">Card link</a>#}
+    {#                        <a href="#" class="card-link">Another link</a>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="col-auto mb-3">#}
+    {#                <div class="card" style="width: 18rem;">#}
+    {#                    <div class="card-body">#}
+    {#                        <h5 class="card-title">Card title</h5>#}
+    {#                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+    {#                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of#}
+    {#                            the card's content.</p>#}
+    {#                        <a href="#" class="card-link">Card link</a>#}
+    {#                        <a href="#" class="card-link">Another link</a>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="col-auto mb-3">#}
+    {#                <div class="card" style="width: 18rem;">#}
+    {#                    <div class="card-body">#}
+    {#                        <h5 class="card-title">Card title</h5>#}
+    {#                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+    {#                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of#}
+    {#                            the card's content.</p>#}
+    {#                        <a href="#" class="card-link">Card link</a>#}
+    {#                        <a href="#" class="card-link">Another link</a>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="col-auto mb-3">#}
+    {#                <div class="card" style="width: 18rem;">#}
+    {#                    <div class="card-body">#}
+    {#                        <h5 class="card-title">Card title</h5>#}
+    {#                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+    {#                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of#}
+    {#                            the card's content.</p>#}
+    {#                        <a href="#" class="card-link">Card link</a>#}
+    {#                        <a href="#" class="card-link">Another link</a>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+
+{% endblock %}
