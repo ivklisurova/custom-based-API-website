@@ -2,13 +2,7 @@
 
 {% block styles %}
     {{ super() }}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-          crossorigin="anonymous"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% include 'styles.html' %}
 {% endblock %}
 
 {% block title %}MDiary{% endblock %}
@@ -26,32 +20,37 @@
         <h1 class="heading">Pick of the day</h1>
     </div>
     <div class="grid-container">
-        <div class="card" >
-            <img class="card-img-top" src="https://i.pinimg.com/736x/e1/7b/91/e17b915d2b6835a608dcd0acd6ea186c.jpg" alt="Card image cap">
+        <div class="card">
+            <img class="card-img-top" src="https://i.pinimg.com/736x/e1/7b/91/e17b915d2b6835a608dcd0acd6ea186c.jpg"
+                 alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h3 class="card-title">Card title</h3>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
                     content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text-muted">Genre:</small></p>
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top"
+                 src="https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_a12704bd-2b25-4aa7-8c8d-8f40cf467dc7.jpg?v=1582781089"
+                 alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
                     content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text-muted">Genre: </small></p>
             </div>
 
         </div>
         <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top"
+                 src="https://www.elbe.paris/2747-medium_default/vintage-movie-poster-goldfinger-007-james-bond-france-small-size.jpg"
+                 alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
                     content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text-muted">Genre: </small></p>
             </div>
 
         </div>
@@ -59,8 +58,6 @@
 
 
 
-
-    </div>
     {#    <div class="container-fluid mt-4">#}
     {#        <div class="row justify-content-center">#}
     {#            <div class="col-auto mb-3">#}
