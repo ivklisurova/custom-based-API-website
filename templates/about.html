@@ -1,0 +1,23 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+    {{ super() }}
+    {% include 'styles.html' %}
+{% endblock %}
+
+{% block title %}MDiary{% endblock %}
+
+{% block navbar %}
+    {% include 'navigation.html' %}
+{% endblock %}
+
+{% block content %}
+
+    No content
+
+    <div class="container">
+        {% include 'footer.html' %}
+    </div>
+
+{% endblock %}
+
