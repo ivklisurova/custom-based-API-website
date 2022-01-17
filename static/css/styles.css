@@ -34,3 +34,8 @@ body {
     padding-bottom: 15px;
 
 }
+
+.form-container {
+    width: 600px;
+    padding-bottom: 20px;
+}
