@@ -17,14 +17,14 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+# @app.route('/about')
+# def about():
+#     return render_template('about.html')
 
 
-@app.route('/test')
-def test():
-    return 'Works'
+# @app.route('/test')
+# def test():
+#     return 'Works'
 
 
 if __name__=='__main__':

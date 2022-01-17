@@ -1,77 +1,65 @@
-{% extends 'bootstrap/base.html' %}
+{% extends 'base.html' %}
 
-{% block styles %}
-    {{ super() }}
-    {% include 'styles.html' %}
-{% endblock %}
-
-{% block title %}MDiary{% endblock %}
-
-{% block navbar %}
-    {% include 'navigation.html' %}
-{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block content %}
     <div class="container">
-        <h1 class="heading">Movies Diary</h1>
-        <h3 class="description">Movies in a Jar</h3>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut etiam sit amet nisl purus. Quam nulla porttitor massa id neque aliquam vestibulum. Diam
-            phasellus vestibulum lorem sed risus ultricies tristique. Velit scelerisque in dictum non consectetur a
-            erat. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Sit amet nulla facilisi morbi tempus
-            iaculis. Id interdum velit laoreet id donec ultrices. Eu augue ut lectus arcu bibendum at varius vel. Lacus
-            luctus accumsan tortor posuere ac ut consequat semper. Vel elit scelerisque mauris pellentesque pulvinar
-            pellentesque habitant morbi tristique.</p>
-    </div>
-    <div class="container">
-        <h1 class="heading">Pick of the day</h1>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 text-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.ubuy.hu/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjFGbStOK05uY0wuX0FDX1NMMTAwOF8uanBn.jpg"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 text-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://cdn.shopify.com/s/files/1/0057/3728/3618/products/5cae019e64c0ee10ead36a00e60f0137_8b8714b2-b733-44ec-8f3f-f131a04915b5_240x360_crop_center.progressive.jpg?v=1614780406"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 text-center">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.al.com/resizer/uQVPmZZslOXT0e_5eAHQa1rZ9So=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width2048/img/entertainment_impact/photo/20563816-standard.jpg"
-                         class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="jumbotron">
+            <h1 class="display-4 heading jumbo-color">Movies Diary</h1>
+            <p class="lead jumbo-color">This is a simple hero unit, a simple jumbotron-style component for calling extra
+                attention to featured content or information.</p>
+            <hr class="my-4 jumbo-color">
+            <p class="jumbo-color">It uses utility classes for typography and spacing to space content out within the
+                larger
+                container.</p>
         </div>
     </div>
 
     <div class="container">
-        {% include 'footer.html' %}
+        <h1 class="heading">Pick of the day</h1>
+        <p>-----------------------------------</p>
     </div>
 
+    <div class="container">
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top"
+                     src="http://images.fandango.com/images/masterrepository/Fandango/186260/theAssassin.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Genre:</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                     src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/169241483/original/af413b406d3cb2eedc149baf2a8b87156d86d56f/make-your-movie-or-short-film-poster.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                        content.</p>
+                    <p class="card-text"><small class="text-muted">Genre:</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                     src="https://creativereview.imgix.net/content/uploads/2019/12/joker_full.jpg?auto=compress,format&q=60&w=1012&h=1500"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional
+                        content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text"><small class="text-muted">Genre:</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+
+
+
