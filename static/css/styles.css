@@ -17,11 +17,20 @@ body {
     color: #343A40;
 }
 
-.card{
+.card {
     background-color: #343A40;
 }
+
 .card-img-top {
     width: 100%;
     height: 35vw;
     object-fit: cover;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
 }
