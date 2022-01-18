@@ -6,7 +6,7 @@ from flask import render_template, redirect, url_for
 from forms import RegisterForm, LoginForm
 from models import User
 from authentication.register import register_user
-from flask_login import login_user
+from flask_login import login_user, logout_user, current_user
 
 
 # ---> Index and About
@@ -49,6 +49,7 @@ def login():
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user)
+                print(current_user)
                 return redirect(url_for('index'))
             return redirect(url_for('login'))
         else:
@@ -56,6 +57,12 @@ def login():
 
     return render_template('login.html', form=form)
 
+
+@app.route('/logout')
+def logout():
+    print(current_user)
+    logout_user()
+    return redirect(url_for('index'))
 
 
 # ----> Profile CRUD
