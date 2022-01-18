@@ -1,8 +1,8 @@
+from flask_login import login_user
 from models import User
 from werkzeug.security import generate_password_hash
 from settings import db
-from sqlalchemy.exc import IntegrityError
-from flask import render_template
+
 
 
 def register_user(user_form):
@@ -17,3 +17,4 @@ def register_user(user_form):
     )
     db.session.add(user)
     db.session.commit()
+    login_user(user)

@@ -35,6 +35,7 @@ def register():
             register_user(form)
             return render_template('index.html')
         except IntegrityError:
+            flash('You have already signed up wit that email, log in instead', 'error')
             return render_template('login.html')
 
     return render_template('register.html', form=form)
