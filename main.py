@@ -1,12 +1,12 @@
-from sqlalchemy.exc import IntegrityError
-from werkzeug.security import check_password_hash
-
-from settings import app, login_manager
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, flash
 from forms import RegisterForm, LoginForm
 from models import User
+from settings import app, login_manager
 from authentication.register import register_user
 from flask_login import login_user, logout_user, current_user
+from sqlalchemy.exc import IntegrityError
+from werkzeug.security import check_password_hash
+from authentication.login import get_user
 
 
 # ---> Index and About
@@ -44,16 +44,16 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        email = form.email.data
-        user = User.query.filter_by(email=email).first()
+        user = get_user(form)
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user)
-                print(current_user)
                 return redirect(url_for('index'))
+            flash('Password incorrect please try again', 'error')
             return redirect(url_for('login'))
         else:
-            return redirect(url_for('register'))
+            flash('That email does not exist, please try again or register', 'error')
+            return redirect(url_for('login'))
 
     return render_template('login.html', form=form)
 
