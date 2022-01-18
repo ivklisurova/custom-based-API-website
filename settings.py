@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_bootstrap import Bootstrap
+from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -11,3 +12,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Texta4etoha@local
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
+login_manager = LoginManager()
+login_manager.init_app(app)
