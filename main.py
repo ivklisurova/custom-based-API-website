@@ -1,16 +1,10 @@
-from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
-from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash
+
+from settings import app
+from flask import render_template
 from forms import RegisterForm, LoginForm
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
-Bootstrap(app)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///movies-diary.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
+from models import User
+from settings import db
 
 
 # ---> Index and About
@@ -26,9 +20,24 @@ def about():
 
 # ---> Authentication
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
+    if form.validate_on_submit():
+        user = User(
+            email=form.email.data,
+            name=form.name.data,
+            password=generate_password_hash(
+                password=form.password.data,
+                method='pbkdf2:sha256',
+                salt_length=3
+            ),
+        )
+        db.session.add(user)
+        db.session.commit()
+        return render_template('index.html')
+
     return render_template('register.html', form=form)
 
 
