@@ -60,7 +60,6 @@ def login():
 
 @app.route('/logout')
 def logout():
-    print(current_user)
     logout_user()
     return redirect(url_for('index'))
 
