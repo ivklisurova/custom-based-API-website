@@ -1,3 +1,4 @@
+from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash
 
 from settings import app
@@ -5,6 +6,7 @@ from flask import render_template
 from forms import RegisterForm, LoginForm
 from models import User
 from settings import db
+from authentication.register import register_user
 
 
 # ---> Index and About
@@ -25,18 +27,11 @@ def about():
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        user = User(
-            email=form.email.data,
-            name=form.name.data,
-            password=generate_password_hash(
-                password=form.password.data,
-                method='pbkdf2:sha256',
-                salt_length=3
-            ),
-        )
-        db.session.add(user)
-        db.session.commit()
-        return render_template('index.html')
+        try:
+            register_user(form)
+            return render_template('index.html')
+        except IntegrityError:
+            return render_template('login.html')
 
     return render_template('register.html', form=form)
 
