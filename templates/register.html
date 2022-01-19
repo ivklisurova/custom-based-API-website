@@ -16,15 +16,7 @@
         </div>
     </div>
 
-    <div class="container text-center">
-
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% for category, message in messages %}
-                <div class="{{ category }}">{{ message }}</div>
-            {% endfor %}
-        {% endwith %}
-
-    </div>
+    {% include 'common/flash-message.html' %}
 
     <div class="container form-container">
         {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "success"}) }}
