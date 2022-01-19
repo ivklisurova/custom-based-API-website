@@ -33,10 +33,10 @@ def register():
     if form.validate_on_submit():
         try:
             register_user(form)
-            return render_template('index.html')
+            return redirect(url_for('index'))
         except IntegrityError:
             flash('You have already signed up wit that email, log in instead', 'error')
-            return render_template('login.html')
+            return redirect(url_for('register'))
 
     return render_template('register.html', form=form)
 

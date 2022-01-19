@@ -4,7 +4,6 @@ from werkzeug.security import generate_password_hash
 from settings import db
 
 
-
 def register_user(user_form):
     user = User(
         email=user_form.email.data,
