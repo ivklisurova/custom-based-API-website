@@ -38,7 +38,7 @@ def register():
             flash('You have already signed up wit that email, log in instead', 'error')
             return redirect(url_for('register'))
 
-    return render_template('register.html', form=form)
+    return render_template('authentication/register.html', form=form)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -56,7 +56,7 @@ def login():
             flash('That email does not exist, please try again or register', 'error')
             return redirect(url_for('login'))
 
-    return render_template('login.html', form=form)
+    return render_template('authentication/login.html', form=form)
 
 
 @app.route('/logout')
