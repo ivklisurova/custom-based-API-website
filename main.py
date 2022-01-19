@@ -72,5 +72,10 @@ def profile():
     return render_template('profile/profile.html')
 
 
+@app.route('/diary')
+def diary():
+    return render_template('profile/diary.html')
+
+
 if __name__=='__main__':
     app.run(debug=True)

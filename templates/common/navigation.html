@@ -35,7 +35,7 @@
                                 <a class="dropdown-item disabled dropdown-user-text" href="#">{{ current_user.email }}</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item dropdown-user-text" href="{{ url_for ('profile') }}">View Profile</a>
-                                <a class="dropdown-item dropdown-user-text" href="#">My Diary</a>
+                                <a class="dropdown-item dropdown-user-text" href="{{ url_for ('diary') }}">My Diary</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item dropdown-user-text" href="{{ url_for ('logout') }}">Log Out</a>
                             </div>
