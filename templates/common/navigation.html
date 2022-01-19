@@ -28,13 +28,16 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Welcome {{ current_user.name }}
+                                Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">My Diary</a>
+                                <a class="dropdown-item disabled dropdown-user-text" href="#">{{ current_user.name }}</a>
+                                <a class="dropdown-item disabled dropdown-user-text" href="#">{{ current_user.email }}</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ url_for ('logout') }}">Log Out</a>
+                                <a class="dropdown-item dropdown-user-text" href="{{ url_for ('profile') }}">View Profile</a>
+                                <a class="dropdown-item dropdown-user-text" href="#">My Diary</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item dropdown-user-text" href="{{ url_for ('logout') }}">Log Out</a>
                             </div>
                         </li>
 

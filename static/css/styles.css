@@ -43,3 +43,8 @@ body {
 .error {
     color: red
 }
+
+.dropdown-user-text {
+    font-size: 15px;
+    text-align: center;
+}
