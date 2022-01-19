@@ -65,7 +65,7 @@ def logout():
     return redirect(url_for('index'))
 
 
-# ----> Profile CRUD
+# ----> Profile
 
 
 if __name__=='__main__':

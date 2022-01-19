@@ -14,15 +14,38 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for ('about') }}">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for ('login') }}">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for ('logout') }}">Log Out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for ('register') }}">Register</a>
-                    </li>
+                    {% if not current_user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for ('login') }}">Log In</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for ('register') }}">Register</a>
+                        </li>
+
+                    {% else %}
+                        {#                        <li class="nav-item">#}
+                        {#                            <a class="nav-link" href="{{ url_for ('logout') }}">Welcome {{ current_user.name }}</a>#}
+                        {#                        </li>#}
+
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ url_for ('logout') }}">Log Out</a>#}
+{#                        </li>#}
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Welcome {{ current_user.name }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">My Diary</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ url_for ('logout') }}">Log Out</a>
+                            </div>
+                        </li>
+
+                    {% endif %}
 
                 </ul>
 
