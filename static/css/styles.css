@@ -51,8 +51,9 @@ body {
 
 .user-profile-container {
     background-color: #e9ecef;
-    height: 600px;
+    height: 610px;
     color: #343A40;
+    text-align: center;
 
 }
 
@@ -63,5 +64,10 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.tab-pane{
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 

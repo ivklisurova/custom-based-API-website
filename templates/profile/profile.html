@@ -8,6 +8,41 @@
         <div class="user-profile-container">
             <img src="static/images/user.png" alt="Pic" class="user-pic">
             <h3>Welcome {{ current_user.name }}</h3>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>User Id</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{ current_user.id }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{ current_user.name }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{ current_user.email }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-success" href="#" role="button">Update Profile</a>
+            <a class="btn btn-success" href="#" role="button">Go to Diary</a>
         </div>
     </div>
 
