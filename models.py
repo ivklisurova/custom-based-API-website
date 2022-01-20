@@ -12,6 +12,7 @@ class User(UserMixin, db.Model):
 
 
 class Movie(db.Model):
+    __tablename__ = "movie"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String, unique=True, nullable=False)
     year = db.Column(db.Integer, nullable=False)
@@ -26,4 +27,4 @@ class Movie(db.Model):
     def __repr__(self):
         return self.title
 
-# db.create_all()
+db.create_all()
