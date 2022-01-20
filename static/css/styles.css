@@ -80,9 +80,8 @@ body {
     display: inline-block;
     background-color: transparent;
     width: 250px;
-    height: 300px;
+    height: 400px;
     border-radius: 10px;
-    padding-top: 5px;
     /*border: 1px solid #f1f1f1;*/
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -122,5 +121,11 @@ body {
     background-color: #343A40;
     color: #E1E8EB;
     transform: rotateY(180deg);
+}
+
+.card-back{
+    text-align: center;
+    padding: 15px;
+    font-size: small ;
 }
 

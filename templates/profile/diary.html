@@ -20,20 +20,29 @@
 
     <div class="container">
         <div class="user-profile-container">
+
             {% for movie in movie_list %}
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                            <img src="{{ movie.img_url }}" alt="Movie Poster" style="height: 400px">
                         </div>
-                        <div class="flip-card-back">
-                            <h1>John Doe</h1>
-                            <p>Architect & Engineer</p>
-                            <p>We love that guy</p>
+                        <div class="flip-card-back card-back">
+                            <div class="title">{{ movie.title }} <span class="release_date">({{ movie.year }})</span>
+                            </div>
+                            <div class="rating">
+                                <label>{{ movie.rating }}</label>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                            <p class="review">{{ movie.review }}</p>
+                            <p class="overview">
+                                {{ movie.description }}
+                            </p>
                         </div>
                     </div>
                 </div>
             {% endfor %}
+
         </div>
     </div>
 
