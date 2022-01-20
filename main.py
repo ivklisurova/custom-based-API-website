@@ -10,7 +10,7 @@ from authentication.login import get_user
 from api import add_movie
 
 
-# ---> Index and About
+# ---> Index
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -78,18 +78,20 @@ def profile(userid):
     return render_template('profile/profile.html', form=edit_profile_form)
 
 
+# ----> Diary
+
 @app.route('/diary', methods=['GET', 'POST'])
 def diary():
     add_movie_form = AddMovieForm()
 
-    user_movies_list = db.session.query(Movie).filter(Movie.user_id==current_user.id).all()
-    print(user_movies_list)
+    user_movie_list = db.session.query(Movie).filter(Movie.user_id==current_user.id).all()
+    print(user_movie_list)
 
     if add_movie_form.validate_on_submit():
         movie = add_movie_form.add_movie_title.data
         add_movie(movie, current_user.id)
         return redirect(url_for('diary'))
-    return render_template('profile/diary.html', form=add_movie_form)
+    return render_template('profile/diary.html', form=add_movie_form, movie_list=user_movie_list)
 
 
 if __name__=='__main__':
