@@ -11,4 +11,19 @@ class User(UserMixin, db.Model):
     name = db.Column(db.String(1000))
 
 
+class Movie(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String, unique=True, nullable=False)
+    year = db.Column(db.Integer, nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    rating = db.Column(db.Float)
+    ranking = db.Column(db.Integer, nullable=False)
+    review = db.Column(db.Text)
+    img_url = db.Column(db.String)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),
+        nullable=False)
+
+    def __repr__(self):
+        return self.title
+
 # db.create_all()

@@ -15,7 +15,6 @@ def index():
     return render_template('index.html')
 
 
-
 # ---> Authentication
 
 @login_manager.user_loader
