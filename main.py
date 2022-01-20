@@ -1,12 +1,13 @@
 from flask import render_template, redirect, url_for, flash
 from forms import RegisterForm, LoginForm, AddMovieForm, UpdateUserForm
-from models import User
+from models import User, Movie
 from settings import app, login_manager, db
 from authentication.register import register_user
 from flask_login import login_user, logout_user, current_user
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash
 from authentication.login import get_user
+from api import add_movie
 
 
 # ---> Index and About
@@ -77,9 +78,17 @@ def profile(userid):
     return render_template('profile/profile.html', form=edit_profile_form)
 
 
-@app.route('/diary')
+@app.route('/diary', methods=['GET', 'POST'])
 def diary():
     add_movie_form = AddMovieForm()
+
+    user_movies_list = db.session.query(Movie).filter(Movie.user_id==current_user.id).all()
+    print(user_movies_list)
+
+    if add_movie_form.validate_on_submit():
+        movie = add_movie_form.add_movie_title.data
+        add_movie(movie, current_user.id)
+        return redirect(url_for('diary'))
     return render_template('profile/diary.html', form=add_movie_form)
 
 
