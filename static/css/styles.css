@@ -38,7 +38,7 @@ body {
 .form-container {
     width: 600px;
     padding-bottom: 20px;
-    margin:auto;
+    margin: auto;
 }
 
 .error {
@@ -75,7 +75,7 @@ body {
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
-    display:inline-block;
+    display: inline-block;
     background-color: transparent;
     width: 250px;
     height: 300px;
@@ -121,3 +121,4 @@ body {
     color: #E1E8EB;
     transform: rotateY(180deg);
 }
+

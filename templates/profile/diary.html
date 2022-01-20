@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 {% import "bootstrap/wtf.html" as wtf %}
 
+{% block title %}Diary{% endblock %}
+
 {% block content %}
 
     <div class="container ">
         <div class="user-profile-container">
             <h1 class="heading">Diary</h1>
+
             <div class="form-container">
                 {{ wtf.quick_form(form, button_map={'submit':'success'}) }}
+                {% include 'modals/instruction-movie-add.html' %}
             </div>
+
 
         </div>
     </div>
