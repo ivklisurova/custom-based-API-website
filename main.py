@@ -1,5 +1,5 @@
 from flask import render_template, redirect, url_for, flash
-from forms import RegisterForm, LoginForm
+from forms import RegisterForm, LoginForm, AddMovieForm
 from models import User
 from settings import app, login_manager
 from authentication.register import register_user
@@ -74,7 +74,8 @@ def profile():
 
 @app.route('/diary')
 def diary():
-    return render_template('profile/diary.html')
+    add_movie_form = AddMovieForm()
+    return render_template('profile/diary.html', form=add_movie_form)
 
 
 if __name__=='__main__':
