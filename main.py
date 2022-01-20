@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, flash
-from forms import RegisterForm, LoginForm, AddMovieForm
+from forms import RegisterForm, LoginForm, AddMovieForm, UpdateUserForm
 from models import User
-from settings import app, login_manager
+from settings import app, login_manager, db
 from authentication.register import register_user
 from flask_login import login_user, logout_user, current_user
 from sqlalchemy.exc import IntegrityError
@@ -70,6 +70,22 @@ def logout():
 @app.route('/profile')
 def profile():
     return render_template('profile/profile.html')
+
+
+@app.route('/edit-profile/<int:userid>', methods=['GET', 'POST'])
+def edit_profile(userid):
+    user_profile = User.query.get(userid)
+    edit_profile_form = UpdateUserForm(
+        email=current_user.email,
+        name=current_user.name,
+    )
+    if edit_profile_form.validate_on_submit():
+        user_profile.email = edit_profile_form.email.data
+        user_profile.name = edit_profile_form.name.data
+        db.session.commit()
+        return redirect(url_for('profile'))
+
+    return render_template('authentication/profile-update.html', form=edit_profile_form)
 
 
 @app.route('/diary')

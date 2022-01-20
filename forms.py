@@ -17,6 +17,12 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Log In')
 
 
+class UpdateUserForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired()])
+    submit = SubmitField('Update Profile Info')
+
+
 class AddMovieForm(FlaskForm):
     add_movie_title = StringField('Search Movie', validators=[DataRequired(message='This field is required')])
     submit = SubmitField('Add')
