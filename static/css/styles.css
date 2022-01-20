@@ -38,6 +38,7 @@ body {
 .form-container {
     width: 600px;
     padding-bottom: 20px;
+    margin:auto;
 }
 
 .error {
