@@ -82,22 +82,6 @@ def profile(userid):
     return render_template('profile/profile.html', form=edit_profile_form)
 
 
-@app.route('/edit-profile/<int:userid>', methods=['GET', 'POST'])
-def edit_profile(userid):
-    user_profile = User.query.get(userid)
-    edit_profile_form = UpdateUserForm(
-        email=current_user.email,
-        name=current_user.name,
-    )
-    if edit_profile_form.validate_on_submit():
-        user_profile.email = edit_profile_form.email.data
-        user_profile.name = edit_profile_form.name.data
-        db.session.commit()
-        return redirect(url_for('profile'))
-
-    return render_template('authentication/profile-update.html', form=edit_profile_form)
-
-
 @app.route('/diary')
 def diary():
     add_movie_form = AddMovieForm()
