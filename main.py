@@ -94,5 +94,15 @@ def diary():
     return render_template('profile/diary.html', form=add_movie_form, movie_list=user_movie_list)
 
 
+# ----> Diary /Update and delete cards/
+
+@app.route('/<int:record_id>')
+def delete_movie(record_id):
+    record_to_delete = Movie.query.get(record_id)
+    db.session.delete(record_to_delete)
+    db.session.commit()
+    return redirect(url_for('diary'))
+
+
 if __name__=='__main__':
     app.run(debug=True)
