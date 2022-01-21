@@ -17,4 +17,3 @@ A Custom Based OMDB API Website that provides to user options to create a profil
 - Jinja2
 - SQLAlchemy
 - Bootstrap
--
