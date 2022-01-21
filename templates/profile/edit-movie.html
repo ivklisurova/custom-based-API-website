@@ -4,12 +4,20 @@
 {% block title %}Edit Movies{% endblock %}
 
 {% block content %}
-    <div class="content">
-        <h1 class="heading">{{ movie_to_update.title }}</h1>
-        <p class="description">Edit Movie Rating</p>
+    <div class="container">
+        <div class="user-profile-container">
+            <h1 class="heading">{{ movie_to_update.title }}</h1>
+            <h2>{{ movie_to_update.year }}</h2>
+            <p class="edit-movie">{{ movie_to_update.description }}</p>
+            <img src="{{ movie_to_update.img_url }}" alt="Movie Poster" style="height: 400px;width: 250px;">
 
-        {{ wtf.quick_form(edit_form) }}
+            {% include 'modals/update-movie-modal.html' %}
+            <div class="update-movie-btn">
+                <a class="btn btn-success" href="#form" data-toggle="modal" data-target="#form">Add your rating and
+                    review</a>
+            </div>
 
+        </div>
 
     </div>
 {% endblock %}

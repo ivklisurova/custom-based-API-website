@@ -162,3 +162,11 @@ body {
     background-color: rgba(230, 87, 230, 0.25);
     background: linear-gradient(135deg, #e61a46, #e61a1a);
 }
+
+.edit-movie{
+    padding: 45px;
+}
+
+.update-movie-btn {
+    padding: 10px;
+}
