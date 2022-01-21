@@ -1,5 +1,5 @@
 from flask import render_template, redirect, url_for, flash
-from forms import RegisterForm, LoginForm, AddMovieForm, UpdateUserForm
+from forms import RegisterForm, LoginForm, AddMovieForm, UpdateUserForm, EditMovieForm
 from models import User, Movie
 from settings import app, login_manager, db
 from authentication.register import register_user
@@ -85,7 +85,6 @@ def diary():
     add_movie_form = AddMovieForm()
 
     user_movie_list = db.session.query(Movie).filter(Movie.user_id==current_user.id).all()
-    print(user_movie_list)
 
     if add_movie_form.validate_on_submit():
         movie = add_movie_form.add_movie_title.data
@@ -95,6 +94,22 @@ def diary():
 
 
 # ----> Diary /Update and delete cards/
+
+
+@app.route('/edit/<int:record_id>', methods=['GET', 'POST'])
+def edit_movie(record_id):
+    record_to_update = Movie.query.get(record_id)
+    edit_record_form = EditMovieForm()
+
+    if edit_record_form.validate_on_submit():
+        record_to_update.rating = edit_record_form.update_rating.data
+        db.session.commit()
+        record_to_update.review = edit_record_form.update_review.data
+        db.session.commit()
+        return redirect(url_for('diary'))
+
+    return render_template('profile/edit-movie.html', edit_form=edit_record_form, movie_to_update=record_to_update)
+
 
 @app.route('/<int:record_id>')
 def delete_movie(record_id):

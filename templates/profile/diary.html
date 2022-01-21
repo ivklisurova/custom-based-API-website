@@ -39,7 +39,7 @@
                             <p class="overview">
                                 <b>Plot:</b> {{ movie.description }}
                             </p>
-                            <a href="{{ url_for('index') }}" class="button">Update</a>
+                            <a href="{{ url_for('edit_movie', record_id = movie.id) }}" class="button">Update</a>
                             <a href="{{ url_for('delete_movie', record_id = movie.id) }}" class="button delete-button">Delete</a>
                         </div>
                     </div>
