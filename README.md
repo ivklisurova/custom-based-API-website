@@ -1,5 +1,6 @@
 # custom-based-API-website
-Python and Flask Movie Diary with API queries
+
+Personal Movie diary build with Flask
 
 
 ### Table of contents
