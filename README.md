@@ -5,6 +5,7 @@ Python and Flask Movie Diary with API queries
 ### Table of contents
 * [General info](#general-info)
 * [Built With](#build-with)
+* [Features](#features)
 
 
 
@@ -17,3 +18,11 @@ A Custom Based OMDB API Website that provides user options to create a profile a
 - Jinja2
 - SQLAlchemy
 - Bootstrap
+
+### Features
+- Landing page 
+- Login/Logout
+- Register page
+- Profile page
+- Diary page
+
