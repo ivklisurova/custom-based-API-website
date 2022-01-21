@@ -15,3 +15,6 @@ A Custom Based OMDB API Website that provides to user options to create a profil
 - Python
 - Flask
 - Jinja2
+- SQLAlchemy
+- Bootstrap
+-
