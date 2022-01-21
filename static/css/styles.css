@@ -141,3 +141,24 @@ body {
     color: #FFC107;
 }
 
+.button {
+    transform: translateZ(40px);
+    cursor: pointer;
+    /*-webkit-backface-visibility: hidden;*/
+    /*backface-visibility: hidden;*/
+    font-weight: bold;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 100px;
+    font: inherit;
+    background: linear-gradient(135deg, #28a745, #2ab549);
+    border: none;
+    position: relative;
+    /*transform-style: preserve-3d;*/
+    transition: 300ms ease;
+}
+
+.button.delete-button {
+    background-color: rgba(230, 87, 230, 0.25);
+    background: linear-gradient(135deg, #e61a46, #e61a1a);
+}
