@@ -9,7 +9,7 @@ Python and Flask Movie Diary with API queries
 
 
 ### General info
-A Custom Based OMDB API Website that provides to user options to create a profile and to add favourite movies. The user can write own comments and rate the movies. 
+A Custom Based OMDB API Website that provides user options to create a profile and to add favorite movies. The user can write their own comments and rate the movies.
 
 ### Built With
 - Python
