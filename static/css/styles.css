@@ -65,9 +65,11 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 .user {
     height: 620px;
 }
+
 .tab-pane {
     padding-top: 25px;
     padding-bottom: 25px;
@@ -123,9 +125,22 @@ body {
     transform: rotateY(180deg);
 }
 
-.card-back{
+.card-back {
     text-align: center;
     padding: 15px;
-    font-size: small ;
+    font-size: small;
+}
+
+.rating {
+    padding-top: 10px;
+}
+
+.review {
+    padding-top: 10px;
+    color: #FFC107;
+}
+
+.star {
+    color: #FFC107;
 }
 

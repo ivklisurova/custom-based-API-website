@@ -25,19 +25,22 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="{{ movie.img_url }}" alt="Movie Poster" style="height: 400px">
+                            <img src="{{ movie.img_url }}" alt="Movie Poster" style="height: 400px;width: 250px;">
                         </div>
                         <div class="flip-card-back card-back">
-                            <div class="title">{{ movie.title }} <span class="release_date">({{ movie.year }})</span>
+                            <div class="title">
+                                <b>{{ movie.title }} <span class="release_date">({{ movie.year }})</span></b>
                             </div>
                             <div class="rating">
                                 <label>{{ movie.rating }}</label>
                                 <i class="fas fa-star star"></i>
                             </div>
-                            <p class="review">{{ movie.review }}</p>
+                            <p class="review"><i>My Review: {{ movie.review }}</i></p>
                             <p class="overview">
-                                {{ movie.description }}
+                                <b>Plot:</b> {{ movie.description }}
                             </p>
+                            <a href="{{ url_for('index') }}" class="button">Update</a>
+                            <a href="{{ url_for('index') }}" class="button delete-button">Delete</a>
                         </div>
                     </div>
                 </div>
