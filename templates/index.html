@@ -16,47 +16,24 @@
     </div>
 
     <div class="container">
-        <h1>Pick of the day</h1>
+        <h1>Pick from top rated movies</h1>
         <p>-----------------------------------</p>
     </div>
 
     <div class="container">
         <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top"
-                     src="http://images.fandango.com/images/masterrepository/Fandango/186260/theAssassin.jpg"
-                     alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional
-                        content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Genre:</small></p>
+            {% for item in movie_list %}
+                <div class="card">
+                    <img class="card-img-top"
+                         src="{{ item['Poster'] }}"
+                         alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item['Title'] }}</h5>
+                        <p class="card-text">{{ item['Plot'] }}</p>
+                        <p class="card-text"><small class="text-muted">Genre: {{ item['Genre'] }}</small></p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top"
-                     src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/169241483/original/af413b406d3cb2eedc149baf2a8b87156d86d56f/make-your-movie-or-short-film-poster.jpg"
-                     alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                    <p class="card-text"><small class="text-muted">Genre:</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top"
-                     src="https://creativereview.imgix.net/content/uploads/2019/12/joker_full.jpg?auto=compress,format&q=60&w=1012&h=1500"
-                     alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Genre:</small></p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

@@ -7,13 +7,15 @@ from flask_login import login_user, logout_user, current_user
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash
 from authentication.login import get_user
-from api import add_movie
+from api import add_movie, get_movie
+from movie_picker import random_list
 
 
 # ---> Index
 @app.route('/')
 def index():
-    return render_template('index.html')
+    random_data = [get_movie(i) for i in random_list]
+    return render_template('index.html', movie_list=random_data)
 
 
 # ---> Authentication
