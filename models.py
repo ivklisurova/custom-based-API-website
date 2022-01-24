@@ -4,7 +4,7 @@ from settings import db
 
 
 class User(UserMixin, db.Model):
-    __tablename__ = "users"
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
@@ -12,7 +12,7 @@ class User(UserMixin, db.Model):
 
 
 class Movie(db.Model):
-    __tablename__ = "movies"
+    __tablename__ = "movie"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String, nullable=False)
     year = db.Column(db.String, nullable=False)
@@ -27,4 +27,4 @@ class Movie(db.Model):
     def __repr__(self):
         return self.title
 
-db.create_all()
+# db.create_all()
