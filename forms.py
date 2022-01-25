@@ -23,6 +23,7 @@ class UpdateUserForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Update Profile Info')
 
+
 class AddMovieForm(FlaskForm):
     add_movie_title = StringField('Search Movie', validators=[DataRequired(message='This field is required')])
     submit = SubmitField('Add')
