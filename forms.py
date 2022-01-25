@@ -20,11 +20,8 @@ class LoginForm(FlaskForm):
 class UpdateUserForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     name = StringField('Name', validators=[DataRequired()])
+    password = PasswordField('New Password', validators=[DataRequired()])
     submit = SubmitField('Update Profile Info')
-
-
-class UpdatePasswordForm(FlaskForm):
-    password = PasswordField('Password', validators=[DataRequired()])
 
 
 class AddMovieForm(FlaskForm):

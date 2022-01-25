@@ -1,11 +1,11 @@
 from flask import render_template, redirect, url_for, flash
-from forms import RegisterForm, LoginForm, AddMovieForm, UpdateUserForm, EditMovieForm
+from forms import RegisterForm, LoginForm, AddMovieForm, UpdateUserForm, EditMovieForm, UpdatePasswordForm
 from models import User, Movie
 from settings import app, login_manager, db
 from authentication.register import register_user
 from flask_login import login_user, logout_user, current_user
 from sqlalchemy.exc import IntegrityError
-from werkzeug.security import check_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 from authentication.login import get_user
 from api import add_movie, get_movie
 from movie_picker import random_list
@@ -71,10 +71,17 @@ def profile(userid):
     edit_profile_form = UpdateUserForm(
         email=current_user.email,
         name=current_user.name,
+        password=current_user.password,
     )
+
     if edit_profile_form.validate_on_submit():
         user_profile.email = edit_profile_form.email.data
         user_profile.name = edit_profile_form.name.data
+        user_profile.password = generate_password_hash(
+            password=edit_profile_form.password.data,
+            method='pbkdf2:sha256',
+            salt_length=3
+        )
         db.session.commit()
         return redirect(url_for('profile', userid=userid))
     return render_template('profile/profile.html', form=edit_profile_form)
