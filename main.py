@@ -1,5 +1,5 @@
 from flask import render_template, redirect, url_for, flash
-from forms import RegisterForm, LoginForm, AddMovieForm, UpdateUserForm, EditMovieForm, UpdatePasswordForm
+from forms import RegisterForm, LoginForm, AddMovieForm, UpdateUserForm, EditMovieForm
 from models import User, Movie
 from settings import app, login_manager, db
 from authentication.register import register_user
@@ -73,7 +73,6 @@ def profile(userid):
         name=current_user.name,
         password=current_user.password,
     )
-
     if edit_profile_form.validate_on_submit():
         user_profile.email = edit_profile_form.email.data
         user_profile.name = edit_profile_form.name.data
