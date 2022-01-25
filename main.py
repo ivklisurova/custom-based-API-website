@@ -9,6 +9,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from authentication.login import get_user
 from api import add_movie, get_movie
 from movie_picker import random_list
+from decorators import login_required
 
 
 # ---> Index
@@ -58,6 +59,7 @@ def login():
 
 
 @app.route('/logout')
+@login_required
 def logout():
     logout_user()
     return redirect(url_for('index'))
@@ -66,6 +68,7 @@ def logout():
 # ----> Profile
 
 @app.route('/profile<int:userid>', methods=['GET', 'POST'])
+@login_required
 def profile(userid):
     user_profile = User.query.get(userid)
     edit_profile_form = UpdateUserForm(
@@ -89,6 +92,7 @@ def profile(userid):
 # ----> Diary
 
 @app.route('/diary', methods=['GET', 'POST'])
+@login_required
 def diary():
     add_movie_form = AddMovieForm()
 
@@ -105,6 +109,7 @@ def diary():
 
 
 @app.route('/edit/<int:record_id>', methods=['GET', 'POST'])
+@login_required
 def edit_movie(record_id):
     record_to_update = Movie.query.get(record_id)
     edit_record_form = EditMovieForm()
@@ -120,6 +125,7 @@ def edit_movie(record_id):
 
 
 @app.route('/<int:record_id>')
+@login_required
 def delete_movie(record_id):
     record_to_delete = Movie.query.get(record_id)
     db.session.delete(record_to_delete)
