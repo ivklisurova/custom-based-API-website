@@ -11,7 +11,7 @@ Personal Movie diary build with Flask
 
 
 ### General info
-A Custom Based OMDB API Website that provides user options to create a profile and to add favorite movies. The user can write their own comments and rate the movies.
+Complete backend Flask app  with OMDB API integration that supports users, authentication, personal diary and comments.
 
 ### Built With
 - Python
