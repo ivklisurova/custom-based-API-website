@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 Bootstrap(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('PG_DATABASE', 'postgresql://postgres:Texta4etoha@localhost/dbmoviediary')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('PG_DATABASE', '**************y')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
