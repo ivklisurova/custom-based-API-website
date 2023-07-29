@@ -67,7 +67,7 @@ def logout():
 
 # ----> Profile
 
-@app.route('/profile<int:userid>', methods=['GET', 'POST'])
+@app.route('/profile/<int:userid>', methods=['GET', 'POST'])
 @login_required
 def profile(userid):
     user_profile = User.query.get(userid)
